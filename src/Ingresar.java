@@ -286,7 +286,8 @@ public class Ingresar extends javax.swing.JFrame {
    
         else if(username.equals("Admin") && password.equals("123"))
         {
-        
+        Admin adminsito=new Admin();
+        adminsito.setVisible(true);
           
         }
         else
