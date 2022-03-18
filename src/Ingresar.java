@@ -59,7 +59,7 @@ public class Ingresar extends javax.swing.JFrame {
         mostrarcontra = new javax.swing.JCheckBox();
         jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        botonRegistrar = new javax.swing.JButton();
 
         jPanel3.setBackground(new java.awt.Color(153, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -150,11 +150,11 @@ public class Ingresar extends javax.swing.JFrame {
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/eye.png"))); // NOI18N
 
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton2.setText("Registrarse");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        botonRegistrar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        botonRegistrar.setText("Registrarse");
+        botonRegistrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+                botonRegistrarMouseClicked(evt);
             }
         });
 
@@ -177,7 +177,7 @@ public class Ingresar extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(28, 28, 28)
-                        .addComponent(jButton2)
+                        .addComponent(botonRegistrar)
                         .addGap(132, 132, 132))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -211,7 +211,7 @@ public class Ingresar extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(111, Short.MAX_VALUE))
         );
 
@@ -296,10 +296,10 @@ public class Ingresar extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+    private void botonRegistrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegistrarMouseClicked
         // TODO add your handling code here:
-        
-    }//GEN-LAST:event_jButton2MouseClicked
+         MostrarVentanaRegistrar();
+    }//GEN-LAST:event_botonRegistrarMouseClicked
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         // TODO add your handling code here:
@@ -311,20 +311,19 @@ public class Ingresar extends javax.swing.JFrame {
             users.add(nuevoUsuario);
         Dba db = new Dba("./basededatos.mdb");
         db.conectar();
-        try {
-          codigo.getValue();
-          premio.getText();
-           int c= (int)codigo.getValue();
-           String lol=premio.getText();
-            db.query.execute("INSERT INTO premios"
-                    + " (codipremi,premio)"
-                    + " VALUES ('" +  c + "', '" + lol + "')");
+        try {      
+           String tipo = (String)cajaTipoUsuario.getSelectedItem();
+           String usuario=usuarioRegistro.getText();
+            db.query.execute("INSERT INTO usuarios"
+                    + " (tipo,usuario,contraseña)"
+                    + " VALUES ('" +  tipo + "', '" + usuario + "', '" + contra + "')");
             JOptionPane.showMessageDialog(this, "Agregado Exitosamente");
             db.commit();
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
         db.desconectar();
+        
         }else{
             JOptionPane.showMessageDialog(this, "Las contraseñas no son iguales" );
             confirmContraRegistro.setText("");
@@ -333,6 +332,12 @@ public class Ingresar extends javax.swing.JFrame {
        
     }//GEN-LAST:event_jButton3MouseClicked
 
+    private void MostrarVentanaRegistrar(){
+        ventanaRegistrarse.setModal(true);
+         ventanaRegistrarse.pack();
+       ventanaRegistrarse.setLocationRelativeTo(this);
+        ventanaRegistrarse.setVisible(true);
+    }
     /**
      * @param args the command line arguments
      */
@@ -370,12 +375,12 @@ public class Ingresar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonRegistrar;
     private javax.swing.JComboBox<String> cajaTipoUsuario;
     private javax.swing.JTextField confirmContraRegistro;
     private javax.swing.JTextField contraRegistro;
     private javax.swing.JPasswordField contrasena;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
