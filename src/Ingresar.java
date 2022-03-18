@@ -44,11 +44,15 @@ public class Ingresar extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         contraRegistro = new javax.swing.JTextField();
         cajaTipoUsuario = new javax.swing.JComboBox<>();
-        confirmContraRegistro = new javax.swing.JTextField();
+        carrera = new javax.swing.JTextField();
         nombreRegistro = new javax.swing.JTextField();
-        usuarioRegistro = new javax.swing.JTextField();
+        ID = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        usuarioRegistro1 = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        confirmContraRegistro1 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -65,8 +69,8 @@ public class Ingresar extends javax.swing.JFrame {
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        jLabel5.setText("Nombre");
-        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 120, 50));
+        jLabel5.setText("Numero de Cuenta/ID");
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 250, 60));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         jLabel6.setText("Tipo de Usuario");
@@ -74,23 +78,27 @@ public class Ingresar extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         jLabel7.setText("Usuario");
-        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, -1, -1));
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         jLabel8.setText("Contraseña");
-        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, -1, -1));
+        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        jLabel9.setText("Confirmar Contraseña");
-        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
-        jPanel3.add(contraRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 240, 200, 40));
+        jLabel9.setText("Carrera");
+        jLabel9.setEnabled(false);
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, -1, -1));
+        jPanel3.add(contraRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 310, 200, 40));
 
         cajaTipoUsuario.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         cajaTipoUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Maestro", "Alumno" }));
-        jPanel3.add(cajaTipoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 200, 40));
-        jPanel3.add(confirmContraRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 300, 200, 40));
-        jPanel3.add(nombreRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, 200, 40));
-        jPanel3.add(usuarioRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 180, 200, 40));
+        jPanel3.add(cajaTipoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 80, 200, 40));
+
+        carrera.setEnabled(false);
+        carrera.setOpaque(false);
+        jPanel3.add(carrera, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 440, 200, 40));
+        jPanel3.add(nombreRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 130, 200, 40));
+        jPanel3.add(ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, 200, 40));
 
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton3.setText("Guardar");
@@ -99,21 +107,35 @@ public class Ingresar extends javax.swing.JFrame {
                 jButton3MouseClicked(evt);
             }
         });
-        jPanel3.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 390, 160, 60));
+        jPanel3.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 520, 160, 60));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel10.setText("Registrarse");
         jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, -1, -1));
 
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        jLabel11.setText("Nombre");
+        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 120, 50));
+        jPanel3.add(usuarioRegistro1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 250, 200, 40));
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        jLabel12.setText("Confirmar Contraseña");
+        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, -1, -1));
+        jPanel3.add(confirmContraRegistro1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 370, 200, 40));
+
         javax.swing.GroupLayout ventanaRegistrarseLayout = new javax.swing.GroupLayout(ventanaRegistrarse.getContentPane());
         ventanaRegistrarse.getContentPane().setLayout(ventanaRegistrarseLayout);
         ventanaRegistrarseLayout.setHorizontalGroup(
             ventanaRegistrarseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 657, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(ventanaRegistrarseLayout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 701, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         ventanaRegistrarseLayout.setVerticalGroup(
             ventanaRegistrarseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 469, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(ventanaRegistrarseLayout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 593, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -306,18 +328,31 @@ public class Ingresar extends javax.swing.JFrame {
         // TODO add your handling code here:
         Usuarios nuevoUsuario;
         String contra;
-        if(contraRegistro.getText().equals(confirmContraRegistro.getText())){
-            contra=confirmContraRegistro.getText();
-            nuevoUsuario=new Usuarios((String)cajaTipoUsuario.getSelectedItem(),usuarioRegistro.getText(),contra);
+        if(contraRegistro.getText().equals(carrera.getText())){
+            contra=carrera.getText();
+            nuevoUsuario=new Usuarios((String)cajaTipoUsuario.getSelectedItem(),ID.getText(),contra);
             users.add(nuevoUsuario);
         Dba db = new Dba("./basededatos.mdb");
         db.conectar();
         try {      
-           String tipo = (String)cajaTipoUsuario.getSelectedItem();
-           String usuario=usuarioRegistro.getText();
+            String nombre=nombreRegistro.getText();
+            int id=Integer.parseInt(ID.getText());
+             String tipo = (String)cajaTipoUsuario.getSelectedItem();
+           String usuario=ID.getText();
             db.query.execute("INSERT INTO usuarios"
                     + " (tipo,usuario,contraseña)"
                     + " VALUES ('" +  tipo + "', '" + usuario + "', '" + contra + "')");
+            if(tipo.equals("Maestro")){
+                db.query.execute("INSERT INTO maestros"
+                    + " (nombre,id)"
+                    + " VALUES ('" + nombre  + "', '" + id +"')");
+            }
+            else if(tipo.equals("Alumno")){
+                db.query.execute("INSERT INTO alumnos"
+                    + " (nombre,cuenta,)"
+                    + " VALUES ('" + nombre  + "', '" + id +"')");
+            }
+            
             JOptionPane.showMessageDialog(this, "Agregado Exitosamente");
             db.commit();
         } catch (SQLException ex) {
@@ -327,7 +362,7 @@ public class Ingresar extends javax.swing.JFrame {
         
         }else{
             JOptionPane.showMessageDialog(this, "Las contraseñas no son iguales" );
-            confirmContraRegistro.setText("");
+            carrera.setText("");
         }
         
        
@@ -376,15 +411,19 @@ public class Ingresar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField ID;
     private javax.swing.JButton botonRegistrar;
     private javax.swing.JComboBox<String> cajaTipoUsuario;
-    private javax.swing.JTextField confirmContraRegistro;
+    private javax.swing.JTextField carrera;
+    private javax.swing.JTextField confirmContraRegistro1;
     private javax.swing.JTextField contraRegistro;
     private javax.swing.JPasswordField contrasena;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -399,7 +438,7 @@ public class Ingresar extends javax.swing.JFrame {
     private javax.swing.JCheckBox mostrarcontra;
     private javax.swing.JTextField nombreRegistro;
     private javax.swing.JTextField usuario;
-    private javax.swing.JTextField usuarioRegistro;
+    private javax.swing.JTextField usuarioRegistro1;
     private javax.swing.JDialog ventanaRegistrarse;
     // End of variables declaration//GEN-END:variables
 ArrayList<Usuarios>users=new ArrayList();

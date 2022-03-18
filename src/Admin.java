@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -50,6 +53,11 @@ public class Admin extends javax.swing.JFrame {
 
         jButton2.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         jButton2.setText("Crear Nueva Clase");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, 274, -1));
 
         jButton3.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
@@ -84,6 +92,14 @@ public class Admin extends javax.swing.JFrame {
         creaExam.setVisible(true);
         
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // TODO add your handling code here:
+        String nombrecla=JOptionPane.showInputDialog(this, "Ingrese el nombre de la clase");
+        int ID=Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese el numero de la clase"));
+        int 
+        Clases clase=new Clases(nombrecla,)
+    }//GEN-LAST:event_jButton2MouseClicked
 
     /**
      * @param args the command line arguments
