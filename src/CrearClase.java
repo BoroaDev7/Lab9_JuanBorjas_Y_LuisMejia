@@ -1,3 +1,7 @@
+
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -30,13 +34,13 @@ public class CrearClase extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        IDExamen1 = new javax.swing.JTextField();
+        nombreClase = new javax.swing.JTextField();
+        cajaIDMaestro = new javax.swing.JComboBox<>();
+        IDExamen2 = new javax.swing.JTextField();
+        idClase = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        botonGuardarClase = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -71,12 +75,12 @@ public class CrearClase extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Nombre ");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, 26));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, 150, 40));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, 150, 40));
+        getContentPane().add(IDExamen1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, 150, 40));
+        getContentPane().add(nombreClase, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, 150, 40));
 
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 150, 30));
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, 150, 40));
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 150, 40));
+        getContentPane().add(cajaIDMaestro, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 150, 30));
+        getContentPane().add(IDExamen2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, 150, 40));
+        getContentPane().add(idClase, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 150, 40));
 
         jLabel7.setBackground(new java.awt.Color(0, 0, 0));
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
@@ -84,9 +88,14 @@ public class CrearClase extends javax.swing.JFrame {
         jLabel7.setText("Agregar Clase");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 0, -1, -1));
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton1.setText("Guardar");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 340, -1, -1));
+        botonGuardarClase.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        botonGuardarClase.setText("Guardar");
+        botonGuardarClase.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonGuardarClaseMouseClicked(evt);
+            }
+        });
+        getContentPane().add(botonGuardarClase, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 340, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/textura-fondo-registro-antiguo_24637-351.jpg"))); // NOI18N
         jLabel1.setText("Agregar Clase");
@@ -94,6 +103,32 @@ public class CrearClase extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void botonGuardarClaseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonGuardarClaseMouseClicked
+        // TODO add your handling code here:
+        Clases clase;
+        String nombreclase=nombreClase.getText();
+        int idClases=Integer.valueOf(idClase.getText());
+        int idMaestro=Integer.valueOf((String)cajaIDMaestro.getSelectedItem());
+        int idExamen1=Integer.valueOf(IDExamen1.getText());
+        int idExamen2=Integer.valueOf(IDExamen2.getText());
+        
+        Dba db = new Dba("./basededatos.mdb");
+        db.conectar();
+        try {      
+
+            db.query.execute("INSERT INTO clases"
+                    + " (nombre,id,id_maestro,id_examen_1,id_examen_2)"
+                    + " VALUES ('" + nombreclase  + "', '" + idClases + "', '" + idMaestro + "', '" + idExamen1+ "', '" + idExamen2 + "')");
+            
+            JOptionPane.showMessageDialog(this, "Agregado Exitosamente");
+            db.commit();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        db.desconectar();
+        
+    }//GEN-LAST:event_botonGuardarClaseMouseClicked
 
     /**
      * @param args the command line arguments
@@ -131,8 +166,11 @@ public class CrearClase extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JTextField IDExamen1;
+    private javax.swing.JTextField IDExamen2;
+    private javax.swing.JButton botonGuardarClase;
+    private javax.swing.JComboBox<String> cajaIDMaestro;
+    private javax.swing.JTextField idClase;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -140,9 +178,6 @@ public class CrearClase extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField nombreClase;
     // End of variables declaration//GEN-END:variables
 }

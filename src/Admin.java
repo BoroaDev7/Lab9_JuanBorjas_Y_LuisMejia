@@ -95,6 +95,8 @@ public class Admin extends javax.swing.JFrame {
 
     private void crearClaseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearClaseMouseClicked
         // TODO add your handling code here:
+        CrearClase clase=new CrearClase();
+        clase.setVisible(true);
       
     }//GEN-LAST:event_crearClaseMouseClicked
 
