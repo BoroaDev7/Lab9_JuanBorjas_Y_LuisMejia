@@ -1,3 +1,8 @@
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -29,11 +34,11 @@ public class CrearExamen extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        cajaCodigo = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jSpinner1 = new javax.swing.JSpinner();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        crearExamen = new javax.swing.JButton();
+        cantpreguntas = new javax.swing.JSpinner();
+        fecha = new com.toedter.calendar.JDateChooser();
         fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -51,9 +56,9 @@ public class CrearExamen extends javax.swing.JFrame {
         jLabel2.setText("Codigo Clase");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 211, -1));
 
-        jComboBox2.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Teoria de bases de datos", "Preparacion de alternos", "Bases II", "Programacion II", " " }));
-        getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 80, 200, 40));
+        cajaCodigo.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        cajaCodigo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Teoria de bases de datos", "Preparacion de alternos", "Bases II", "Programacion II", " " }));
+        getContentPane().add(cajaCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 80, 200, 40));
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
         jLabel3.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
@@ -61,17 +66,30 @@ public class CrearExamen extends javax.swing.JFrame {
         jLabel3.setText("Cantidad Preguntas");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 240, 40));
 
-        jButton1.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        jButton1.setText("CREAR EXAMEN");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 310, -1, 65));
-        getContentPane().add(jSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 200, 40));
-        getContentPane().add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, 200, 40));
+        crearExamen.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        crearExamen.setText("CREAR EXAMEN");
+        crearExamen.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                crearExamenMouseClicked(evt);
+            }
+        });
+        getContentPane().add(crearExamen, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 310, -1, 65));
+        getContentPane().add(cantpreguntas, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 200, 40));
+        getContentPane().add(fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, 200, 40));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/textura-fondo-registro-antiguo_24637-351.jpg"))); // NOI18N
         getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void crearExamenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearExamenMouseClicked
+        // TODO add your handling code here:
+      
+        int codigo=(Integer.parseInt((String)cajaCodigo.getSelectedItem()));
+         Examenes examen=new Examenes(codigo);
+       
+    }//GEN-LAST:event_crearExamenMouseClicked
 
     /**
      * @param args the command line arguments
@@ -112,13 +130,14 @@ public class CrearExamen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cajaCodigo;
+    private javax.swing.JSpinner cantpreguntas;
+    private javax.swing.JButton crearExamen;
+    private com.toedter.calendar.JDateChooser fecha;
     private javax.swing.JLabel fondo;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JSpinner jSpinner1;
     // End of variables declaration//GEN-END:variables
+
 }

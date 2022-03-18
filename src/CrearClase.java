@@ -108,10 +108,10 @@ public class CrearClase extends javax.swing.JFrame {
         // TODO add your handling code here:
         Clases clase;
         String nombreclase=nombreClase.getText();
-        int idClases=Integer.valueOf(idClase.getText());
-        int idMaestro=Integer.valueOf((String)cajaIDMaestro.getSelectedItem());
-        int idExamen1=Integer.valueOf(IDExamen1.getText());
-        int idExamen2=Integer.valueOf(IDExamen2.getText());
+        int idClases=Integer.parseInt(idClase.getText());
+        int idMaestro=Integer.parseInt((String)cajaIDMaestro.getSelectedItem());
+        int idExamen1=Integer.parseInt(IDExamen1.getText());
+        int idExamen2=Integer.parseInt(IDExamen2.getText());
         
         Dba db = new Dba("./basededatos.mdb");
         db.conectar();
