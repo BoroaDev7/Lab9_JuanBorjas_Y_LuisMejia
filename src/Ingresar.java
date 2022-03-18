@@ -41,7 +41,7 @@ public class Ingresar extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        labelcarrera = new javax.swing.JLabel();
         contraRegistro = new javax.swing.JTextField();
         cajaTipoUsuario = new javax.swing.JComboBox<>();
         carrera = new javax.swing.JTextField();
@@ -84,10 +84,10 @@ public class Ingresar extends javax.swing.JFrame {
         jLabel8.setText("Contraseña");
         jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, -1, -1));
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        jLabel9.setText("Carrera");
-        jLabel9.setEnabled(false);
-        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, -1, -1));
+        labelcarrera.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        labelcarrera.setText("Carrera");
+        labelcarrera.setEnabled(false);
+        jPanel3.add(labelcarrera, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, -1, -1));
         jPanel3.add(contraRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 310, 200, 40));
 
         cajaTipoUsuario.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -348,9 +348,14 @@ public class Ingresar extends javax.swing.JFrame {
                     + " VALUES ('" + nombre  + "', '" + id +"')");
             }
             else if(tipo.equals("Alumno")){
+                labelcarrera.setOpaque(false);
+                labelcarrera.setEnabled(true);             
+                carrera.setOpaque(false);
+                carrera.setEnabled(true);
+                String carre=carrera.getText();
                 db.query.execute("INSERT INTO alumnos"
-                    + " (nombre,cuenta,)"
-                    + " VALUES ('" + nombre  + "', '" + id +"')");
+                    + " (nombre,cuenta,carrera)"
+                    + " VALUES ('" + nombre  + "', '" + id + "', '" + carre + "')");
             }
             
             JOptionPane.showMessageDialog(this, "Agregado Exitosamente");
@@ -431,10 +436,10 @@ public class Ingresar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel labelcarrera;
     private javax.swing.JCheckBox mostrarcontra;
     private javax.swing.JTextField nombreRegistro;
     private javax.swing.JTextField usuario;

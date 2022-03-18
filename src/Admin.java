@@ -30,51 +30,51 @@ public class Admin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        crearExamen = new javax.swing.JButton();
+        crearClase = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        crearPregunta = new javax.swing.JButton();
+        verClases = new javax.swing.JButton();
+        calificaciones = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        jButton1.setText("Crear Nuevo Examen");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        crearExamen.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        crearExamen.setText("Crear Nuevo Examen");
+        crearExamen.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                crearExamenMouseClicked(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 274, -1));
+        getContentPane().add(crearExamen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 274, -1));
 
-        jButton2.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        jButton2.setText("Crear Nueva Clase");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        crearClase.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        crearClase.setText("Crear Nueva Clase");
+        crearClase.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+                crearClaseMouseClicked(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, 274, -1));
+        getContentPane().add(crearClase, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, 274, -1));
 
         jButton3.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         jButton3.setText("Crear Categoria");
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 274, -1));
 
-        jButton4.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        jButton4.setText("Crear Nueva Pregunta");
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 130, 274, -1));
+        crearPregunta.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        crearPregunta.setText("Crear Nueva Pregunta");
+        getContentPane().add(crearPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 130, 274, -1));
 
-        jButton5.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        jButton5.setText("Ver Clases");
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 274, -1));
+        verClases.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        verClases.setText("Ver Clases");
+        getContentPane().add(verClases, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 274, -1));
 
-        jButton6.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        jButton6.setText("Ir a centro de Calificaciones");
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 240, 274, -1));
+        calificaciones.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        calificaciones.setText("Ir a centro de Calificaciones");
+        getContentPane().add(calificaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 240, 274, -1));
 
         jButton7.setBackground(new java.awt.Color(255, 255, 255));
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iconfinder-498-student-notes-note-education-4212916_114953.png"))); // NOI18N
@@ -86,20 +86,17 @@ public class Admin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+    private void crearExamenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearExamenMouseClicked
         // TODO add your handling code here:
         CrearExamen creaExam=new CrearExamen();
         creaExam.setVisible(true);
         
-    }//GEN-LAST:event_jButton1MouseClicked
+    }//GEN-LAST:event_crearExamenMouseClicked
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+    private void crearClaseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearClaseMouseClicked
         // TODO add your handling code here:
-        String nombrecla=JOptionPane.showInputDialog(this, "Ingrese el nombre de la clase");
-        int ID=Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese el numero de la clase"));
-        int 
-        Clases clase=new Clases(nombrecla,)
-    }//GEN-LAST:event_jButton2MouseClicked
+      
+    }//GEN-LAST:event_crearClaseMouseClicked
 
     /**
      * @param args the command line arguments
@@ -138,13 +135,13 @@ public class Admin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton calificaciones;
+    private javax.swing.JButton crearClase;
+    private javax.swing.JButton crearExamen;
+    private javax.swing.JButton crearPregunta;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton verClases;
     // End of variables declaration//GEN-END:variables
 }
