@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Alumnos {
     private String nombrealumno,numCuenta,carrera;
-    private ArrayList<Clases>listaclases;
+    private ArrayList<Clases>listaclases=new ArrayList();
 
     public Alumnos() {
     }
