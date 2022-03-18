@@ -66,6 +66,11 @@ public class Admin extends javax.swing.JFrame {
 
         crearPregunta.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         crearPregunta.setText("Crear Nueva Pregunta");
+        crearPregunta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                crearPreguntaMouseClicked(evt);
+            }
+        });
         getContentPane().add(crearPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 130, 274, -1));
 
         verClases.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
@@ -99,6 +104,11 @@ public class Admin extends javax.swing.JFrame {
         clase.setVisible(true);
       
     }//GEN-LAST:event_crearClaseMouseClicked
+
+    private void crearPreguntaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearPreguntaMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_crearPreguntaMouseClicked
 
     /**
      * @param args the command line arguments
