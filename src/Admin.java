@@ -548,6 +548,11 @@ public class Admin extends javax.swing.JFrame {
 
         botonModificarAlum.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         botonModificarAlum.setText("Modificar");
+        botonModificarAlum.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonModificarAlumMouseClicked(evt);
+            }
+        });
         listarAlumnos.getContentPane().add(botonModificarAlum, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 510, 170, 60));
 
         botonEliminarAlum.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -809,6 +814,20 @@ public class Admin extends javax.swing.JFrame {
            confirmContraAlumno.setText("");
         }
     }//GEN-LAST:event_guardarAlumnosMouseClicked
+
+    private void botonModificarAlumMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModificarAlumMouseClicked
+        // TODO add your handling code here:
+        Dba db = new Dba("./basededatos.mdb");
+        db.conectar();
+        try {
+            db.query.execute("update alumnos set nombre='col x' where cuenta=5000");
+            db.commit();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        db.desconectar();
+
+    }//GEN-LAST:event_botonModificarAlumMouseClicked
 
     /**
      * @param args the command line arguments
