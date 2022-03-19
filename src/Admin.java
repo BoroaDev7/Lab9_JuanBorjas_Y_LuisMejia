@@ -817,10 +817,18 @@ public class Admin extends javax.swing.JFrame {
 
     private void botonModificarAlumMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModificarAlumMouseClicked
         // TODO add your handling code here:
+        int pos=Integer.parseInt(JOptionPane.showInputDialog(this,"Ingrese la cuenta del alumno a modificar"));
+        String nombre=JOptionPane.showInputDialog(this,"Ingrese el Nuevo Nombre ");
+        int cuenta=Integer.parseInt(JOptionPane.showInputDialog(this,"Ingrese el nuevo numero de cuenta"));
+        String carrera=JOptionPane.showInputDialog(this, "Ingrese la Carrera");
+    
+        
         Dba db = new Dba("./basededatos.mdb");
         db.conectar();
         try {
-            db.query.execute("update alumnos set nombre='col x' where cuenta=5000");
+            db.query.execute("update alumnos set nombre="+nombre+ "where cuenta="+pos);
+            db.query.execute("update alumnos set cuenta="+cuenta+ "where cuenta="+pos);
+            db.query.execute("update alumnos set carrera="+carrera+ "where cuenta="+pos);
             db.commit();
         } catch (SQLException ex) {
             ex.printStackTrace();
