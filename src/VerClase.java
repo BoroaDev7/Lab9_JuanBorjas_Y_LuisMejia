@@ -1,3 +1,6 @@
+
+import javax.swing.JComboBox;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -12,6 +15,7 @@
 public class VerClase extends javax.swing.JFrame {
 
     /**
+     
      * Creates new form VerClase
      */
     public VerClase() {
@@ -28,15 +32,15 @@ public class VerClase extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        tablaVerClase = new javax.swing.JTable();
+        cajaClases = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaVerClase.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        tablaVerClase.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -44,20 +48,33 @@ public class VerClase extends javax.swing.JFrame {
                 "ID Examen", "CAT Pregunta", "Fecha a Realizar"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tablaVerClase);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 600, 250));
 
-        jComboBox1.setEditable(true);
-        jComboBox1.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Teoria de bases de datos I" }));
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, -1, -1));
+        cajaClases.setEditable(true);
+        cajaClases.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        cajaClases.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Teoria de bases de datos I" }));
+        cajaClases.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cajaClasesActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cajaClases, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/textura-fondo-registro-antiguo_24637-351.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 390));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cajaClasesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaClasesActionPerformed
+        // TODO add your handling code here:
+        int po=cajaClases.getSelectedIndex();
+       
+        
+        
+    }//GEN-LAST:event_cajaClasesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -94,11 +111,22 @@ public class VerClase extends javax.swing.JFrame {
             }
         });
     }
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> cajaClases;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tablaVerClase;
     // End of variables declaration//GEN-END:variables
+
+    public JComboBox<String> getCajaClases() {
+        return cajaClases;
+    }
+
+    public void setCajaClases(JComboBox<String> cajaClases) {
+        this.cajaClases = cajaClases;
+    }
+
 }
