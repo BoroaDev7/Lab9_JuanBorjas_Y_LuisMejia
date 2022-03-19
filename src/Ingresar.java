@@ -51,7 +51,7 @@ public class Ingresar extends javax.swing.JFrame {
         botonGuardarRegistro = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        usuarioRegistro1 = new javax.swing.JTextField();
+        usuarioRegistro = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         confirmContraRegistro1 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
@@ -117,7 +117,7 @@ public class Ingresar extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         jLabel11.setText("Nombre");
         jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 120, 50));
-        jPanel3.add(usuarioRegistro1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 250, 200, 40));
+        jPanel3.add(usuarioRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 250, 200, 40));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         jLabel12.setText("Confirmar Contraseña");
@@ -340,7 +340,7 @@ public class Ingresar extends javax.swing.JFrame {
             String nombre=nombreRegistro.getText();
             int id=Integer.parseInt(ID.getText());
              String tipo = (String)cajaTipoUsuario.getSelectedItem();
-           String usuario=ID.getText();
+           String usuario=usuarioRegistro.getText();
             db.query.execute("INSERT INTO usuarios"
                     + " (tipo,usuario,contraseña)"
                     + " VALUES ('" +  tipo + "', '" + usuario + "', '" + contra + "')");
@@ -448,7 +448,7 @@ public class Ingresar extends javax.swing.JFrame {
     private javax.swing.JCheckBox mostrarcontra;
     private javax.swing.JTextField nombreRegistro;
     private javax.swing.JTextField usuario;
-    private javax.swing.JTextField usuarioRegistro1;
+    private javax.swing.JTextField usuarioRegistro;
     private javax.swing.JDialog ventanaRegistrarse;
     // End of variables declaration//GEN-END:variables
 ArrayList<Usuarios>users=new ArrayList();
