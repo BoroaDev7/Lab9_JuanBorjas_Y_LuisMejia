@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
 /**
@@ -47,7 +48,7 @@ public class Ingresar extends javax.swing.JFrame {
         carrera = new javax.swing.JTextField();
         nombreRegistro = new javax.swing.JTextField();
         ID = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        botonGuardarRegistro = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         usuarioRegistro1 = new javax.swing.JTextField();
@@ -100,14 +101,14 @@ public class Ingresar extends javax.swing.JFrame {
         jPanel3.add(nombreRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 130, 200, 40));
         jPanel3.add(ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, 200, 40));
 
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton3.setText("Guardar");
-        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+        botonGuardarRegistro.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        botonGuardarRegistro.setText("Guardar");
+        botonGuardarRegistro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton3MouseClicked(evt);
+                botonGuardarRegistroMouseClicked(evt);
             }
         });
-        jPanel3.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 520, 160, 60));
+        jPanel3.add(botonGuardarRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 520, 160, 60));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel10.setText("Registrarse");
@@ -324,8 +325,9 @@ public class Ingresar extends javax.swing.JFrame {
          MostrarVentanaRegistrar();
     }//GEN-LAST:event_botonRegistrarMouseClicked
 
-    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+    private void botonGuardarRegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonGuardarRegistroMouseClicked
         // TODO add your handling code here:
+        Admin admin=new Admin();
         Usuarios nuevoUsuario;
         String contra;
         if(contraRegistro.getText().equals(carrera.getText())){
@@ -346,6 +348,9 @@ public class Ingresar extends javax.swing.JFrame {
                 db.query.execute("INSERT INTO maestros"
                     + " (nombre,id)"
                     + " VALUES ('" + nombre  + "', '" + id +"')");
+                DefaultComboBoxModel caja = (DefaultComboBoxModel)admin.getCajaIDMaestro().getModel();
+                caja.addElement(id);
+                
             }
             else if(tipo.equals("Alumno")){
                 labelcarrera.setOpaque(false);
@@ -371,7 +376,7 @@ public class Ingresar extends javax.swing.JFrame {
         }
         
        
-    }//GEN-LAST:event_jButton3MouseClicked
+    }//GEN-LAST:event_botonGuardarRegistroMouseClicked
 
     private void MostrarVentanaRegistrar(){
         ventanaRegistrarse.setModal(true);
@@ -417,6 +422,7 @@ public class Ingresar extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField ID;
+    private javax.swing.JButton botonGuardarRegistro;
     private javax.swing.JButton botonRegistrar;
     private javax.swing.JComboBox<String> cajaTipoUsuario;
     private javax.swing.JTextField carrera;
@@ -424,7 +430,6 @@ public class Ingresar extends javax.swing.JFrame {
     private javax.swing.JTextField contraRegistro;
     private javax.swing.JPasswordField contrasena;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
