@@ -1,5 +1,7 @@
 
+import java.sql.SQLException;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 
 
@@ -97,18 +99,39 @@ public class CrearPregunta extends javax.swing.JFrame {
         String titulos=titulo.getText();
         String descripciones=descripcion.getText();
        int codigo=(int)cajaCodigo.getSelectedItem();
-        boolean verdad=false;
-        boolean falsos= false;
+        boolean respuesta;
+        
         if(verdadero.isSelected()){
-            verdad=true;
-            preguntas=new Preguntas(descripciones,verdad);
+            respuesta=true;
+            preguntas=new Preguntas(descripciones,respuesta);
             questions.add(preguntas);
             examen=new Examenes(codigo);
             examen.setPreguntas(questions);
             
+            Dba db = new Dba("./basededatos.mdb");
+        db.conectar();
+        try {      
+
+            db.query.execute("INSERT INTO preguntas"
+                    + " (pregunta,respuesta)"
+                    + " VALUES ('" + preguntas  + "', '" + respuesta + "')");
+            
+            JOptionPane.showMessageDialog(this, "Agregado Exitosamente");
+            db.commit();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        db.desconectar();
+            
+            
         }
         else if (falso.isSelected()){
-            falsos=true;
+            respuesta=false;
+            preguntas=new Preguntas(descripciones,respuesta);
+            questions.add(preguntas);
+            examen=new Examenes(codigo);
+            examen.setPreguntas(questions);
+            
         }
         
         

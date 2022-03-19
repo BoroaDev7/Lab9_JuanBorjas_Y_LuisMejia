@@ -57,7 +57,6 @@ public class CrearExamen extends javax.swing.JFrame {
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 211, -1));
 
         cajaCodigo.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
-        cajaCodigo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Teoria de bases de datos", "Preparacion de alternos", "Bases II", "Programacion II", " " }));
         getContentPane().add(cajaCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 80, 200, 40));
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
