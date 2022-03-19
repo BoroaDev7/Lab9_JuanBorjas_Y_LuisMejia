@@ -110,17 +110,17 @@ public class Admin extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         agregarAlumnos = new javax.swing.JFrame();
         jLabel33 = new javax.swing.JLabel();
-        nombreRegistro = new javax.swing.JTextField();
+        nombreAlumnos = new javax.swing.JTextField();
         jLabel34 = new javax.swing.JLabel();
-        ID = new javax.swing.JTextField();
+        numeroCuenta = new javax.swing.JTextField();
         jLabel35 = new javax.swing.JLabel();
-        usuarioRegistro1 = new javax.swing.JTextField();
+        usuarioAlumno = new javax.swing.JTextField();
         jLabel36 = new javax.swing.JLabel();
-        contraRegistro = new javax.swing.JTextField();
+        contraAlumno = new javax.swing.JTextField();
         jLabel37 = new javax.swing.JLabel();
-        confirmContraRegistro1 = new javax.swing.JTextField();
-        labelcarrera = new javax.swing.JLabel();
-        carrera = new javax.swing.JTextField();
+        confirmContraAlumno = new javax.swing.JTextField();
+        labelcarreraAlumnos = new javax.swing.JLabel();
+        carreraAlumno = new javax.swing.JTextField();
         guardarAlumnos = new javax.swing.JButton();
         jLabel32 = new javax.swing.JLabel();
         listarAlumnos = new javax.swing.JFrame();
@@ -478,46 +478,46 @@ public class Admin extends javax.swing.JFrame {
         jLabel33.setForeground(new java.awt.Color(255, 255, 255));
         jLabel33.setText("Nombre");
         agregarAlumnos.getContentPane().add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 110, 40));
-        agregarAlumnos.getContentPane().add(nombreRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, 190, 40));
+        agregarAlumnos.getContentPane().add(nombreAlumnos, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, 190, 40));
 
         jLabel34.setBackground(new java.awt.Color(0, 0, 0));
         jLabel34.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(255, 255, 255));
         jLabel34.setText("Numero de Cuenta");
         agregarAlumnos.getContentPane().add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 250, 60));
-        agregarAlumnos.getContentPane().add(ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, 190, 30));
+        agregarAlumnos.getContentPane().add(numeroCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, 190, 30));
 
         jLabel35.setBackground(new java.awt.Color(0, 0, 0));
         jLabel35.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         jLabel35.setForeground(new java.awt.Color(255, 255, 255));
         jLabel35.setText("Usuario");
         agregarAlumnos.getContentPane().add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, -1));
-        agregarAlumnos.getContentPane().add(usuarioRegistro1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, 190, 30));
+        agregarAlumnos.getContentPane().add(usuarioAlumno, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, 190, 30));
 
         jLabel36.setBackground(new java.awt.Color(0, 0, 0));
         jLabel36.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         jLabel36.setForeground(new java.awt.Color(255, 255, 255));
         jLabel36.setText("Contraseña");
         agregarAlumnos.getContentPane().add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
-        agregarAlumnos.getContentPane().add(contraRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 200, 190, 30));
+        agregarAlumnos.getContentPane().add(contraAlumno, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 200, 190, 30));
 
         jLabel37.setBackground(new java.awt.Color(0, 0, 0));
         jLabel37.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         jLabel37.setForeground(new java.awt.Color(255, 255, 255));
         jLabel37.setText("Confirmar Contraseña");
         agregarAlumnos.getContentPane().add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
-        agregarAlumnos.getContentPane().add(confirmContraRegistro1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 260, 190, 30));
+        agregarAlumnos.getContentPane().add(confirmContraAlumno, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 260, 190, 30));
 
-        labelcarrera.setBackground(new java.awt.Color(0, 0, 0));
-        labelcarrera.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        labelcarrera.setForeground(new java.awt.Color(255, 255, 255));
-        labelcarrera.setText("Carrera");
-        labelcarrera.setEnabled(false);
-        agregarAlumnos.getContentPane().add(labelcarrera, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
+        labelcarreraAlumnos.setBackground(new java.awt.Color(0, 0, 0));
+        labelcarreraAlumnos.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        labelcarreraAlumnos.setForeground(new java.awt.Color(255, 255, 255));
+        labelcarreraAlumnos.setText("Carrera");
+        labelcarreraAlumnos.setEnabled(false);
+        agregarAlumnos.getContentPane().add(labelcarreraAlumnos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
 
-        carrera.setEnabled(false);
-        carrera.setOpaque(false);
-        agregarAlumnos.getContentPane().add(carrera, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 310, 190, 30));
+        carreraAlumno.setEnabled(false);
+        carreraAlumno.setOpaque(false);
+        agregarAlumnos.getContentPane().add(carreraAlumno, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 310, 190, 30));
 
         guardarAlumnos.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         guardarAlumnos.setText("Guardar");
@@ -776,34 +776,27 @@ public class Admin extends javax.swing.JFrame {
         // TODO add your handling code here:
         Usuarios nuevoUsuario;
         String contra;
+         if(contraAlumno.getText().equals(confirmContraAlumno.getText())){
         Dba db = new Dba("./basededatos.mdb");
         db.conectar();
-        try {      
-            String nombre=nombreRegistro.getText();
-            int id=Integer.parseInt(ID.getText());
-             
-           String usuario=ID.getText();
-            db.query.execute("INSERT INTO usuarios"
-                    + " (tipo,usuario,contraseña)"
-                    + " VALUES ('" +  tipo + "', '" + usuario + "', '" + contra + "')");
-            if(tipo.equals("Maestro")){
-                db.query.execute("INSERT INTO maestros"
-                    + " (nombre,id)"
-                    + " VALUES ('" + nombre  + "', '" + id +"')");
-                DefaultComboBoxModel caja = (DefaultComboBoxModel)admin.getCajaIDMaestro().getModel();
-                caja.addElement(id);
-                
-            }
-            else if(tipo.equals("Alumno")){
-                labelcarrera.setOpaque(false);
-                labelcarrera.setEnabled(true);             
-                carrera.setOpaque(false);
-                carrera.setEnabled(true);
-                String carre=carrera.getText();
-                db.query.execute("INSERT INTO alumnos"
+        try {  
+            labelcarreraAlumnos.setOpaque(false);
+            labelcarreraAlumnos.setEnabled(true);             
+            carreraAlumno.setOpaque(false);
+            carreraAlumno.setEnabled(true);
+               
+            String nombre= nombreAlumnos.getText();
+            int id=Integer.parseInt(numeroCuenta.getText());
+            String carre=carreraAlumno.getText();
+           String usuario=usuarioAlumno.getText();
+           String contrasena=confirmContraAlumno.getText();
+            db.query.execute("INSERT INTO alumnos"
                     + " (nombre,cuenta,carrera)"
                     + " VALUES ('" + nombre  + "', '" + id + "', '" + carre + "')");
-            }
+            
+             db.query.execute("INSERT INTO usuarios"
+                    + " (tipo,usuario,contraseña)"
+                    + " VALUES ('" + "Alumno"  + "', '" + usuario + "', '" + contrasena + "')");   
             
             JOptionPane.showMessageDialog(this, "Agregado Exitosamente");
             db.commit();
@@ -811,7 +804,10 @@ public class Admin extends javax.swing.JFrame {
             ex.printStackTrace();
         }
         db.desconectar();
-        
+         }else{
+            JOptionPane.showMessageDialog(this, "Las contraseñas no son iguales" );
+           confirmContraAlumno.setText("");
+        }
     }//GEN-LAST:event_guardarAlumnosMouseClicked
 
     /**
@@ -854,7 +850,6 @@ public class Admin extends javax.swing.JFrame {
     private javax.swing.JFrame Alumnos;
     private javax.swing.JFrame Calificaciones;
     private javax.swing.JFrame Clases;
-    private javax.swing.JTextField ID;
     private javax.swing.JTextField IDExamen1;
     private javax.swing.JTextField IDExamen2;
     private javax.swing.JTextField IDExamen3;
@@ -877,9 +872,9 @@ public class Admin extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cajaIDMaestro1;
     private javax.swing.JButton calificaciones;
     private javax.swing.JSpinner cantpreguntas;
-    private javax.swing.JTextField carrera;
-    private javax.swing.JTextField confirmContraRegistro1;
-    private javax.swing.JTextField contraRegistro;
+    private javax.swing.JTextField carreraAlumno;
+    private javax.swing.JTextField confirmContraAlumno;
+    private javax.swing.JTextField contraAlumno;
     private javax.swing.JButton crearExamen;
     private javax.swing.JButton crearExamen1;
     private javax.swing.JFrame createClass;
@@ -940,15 +935,16 @@ public class Admin extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
-    private javax.swing.JLabel labelcarrera;
+    private javax.swing.JLabel labelcarreraAlumnos;
     private javax.swing.JFrame listarAlumnos;
     private javax.swing.JFrame modificarClase;
+    private javax.swing.JTextField nombreAlumnos;
     private javax.swing.JTextField nombreClase;
     private javax.swing.JTextField nombreClase1;
-    private javax.swing.JTextField nombreRegistro;
+    private javax.swing.JTextField numeroCuenta;
     private javax.swing.JTable tablaVerClase;
     private javax.swing.JTextField titulo;
-    private javax.swing.JTextField usuarioRegistro1;
+    private javax.swing.JTextField usuarioAlumno;
     private javax.swing.JButton verClases;
     private javax.swing.JRadioButton verdadero;
     private javax.swing.JFrame watchClass;

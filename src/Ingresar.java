@@ -53,7 +53,7 @@ public class Ingresar extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         usuarioRegistro = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        confirmContraRegistro1 = new javax.swing.JTextField();
+        confirmContraRegistro = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -122,7 +122,7 @@ public class Ingresar extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         jLabel12.setText("Confirmar Contraseña");
         jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, -1, -1));
-        jPanel3.add(confirmContraRegistro1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 370, 200, 40));
+        jPanel3.add(confirmContraRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 370, 200, 40));
 
         javax.swing.GroupLayout ventanaRegistrarseLayout = new javax.swing.GroupLayout(ventanaRegistrarse.getContentPane());
         ventanaRegistrarse.getContentPane().setLayout(ventanaRegistrarseLayout);
@@ -330,8 +330,8 @@ public class Ingresar extends javax.swing.JFrame {
         Admin admin=new Admin();
         Usuarios nuevoUsuario;
         String contra;
-        if(contraRegistro.getText().equals(carrera.getText())){
-            contra=carrera.getText();
+        if(contraRegistro.getText().equals(confirmContraRegistro.getText())){
+            contra=confirmContraRegistro.getText();
             nuevoUsuario=new Usuarios((String)cajaTipoUsuario.getSelectedItem(),ID.getText(),contra);
             users.add(nuevoUsuario);
         Dba db = new Dba("./basededatos.mdb");
@@ -372,7 +372,7 @@ public class Ingresar extends javax.swing.JFrame {
         
         }else{
             JOptionPane.showMessageDialog(this, "Las contraseñas no son iguales" );
-            carrera.setText("");
+           confirmContraRegistro.setText("");
         }
         
        
@@ -426,7 +426,7 @@ public class Ingresar extends javax.swing.JFrame {
     private javax.swing.JButton botonRegistrar;
     private javax.swing.JComboBox<String> cajaTipoUsuario;
     private javax.swing.JTextField carrera;
-    private javax.swing.JTextField confirmContraRegistro1;
+    private javax.swing.JTextField confirmContraRegistro;
     private javax.swing.JTextField contraRegistro;
     private javax.swing.JPasswordField contrasena;
     private javax.swing.JButton jButton1;
