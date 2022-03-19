@@ -74,9 +74,20 @@ public class Admin extends javax.swing.JFrame {
         botonGuardarPregunta = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
+        Calificaciones = new javax.swing.JFrame();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jFrame1 = new javax.swing.JFrame();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jLabel21 = new javax.swing.JLabel();
         crearExamen = new javax.swing.JButton();
         crearClase = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         crearPregunta = new javax.swing.JButton();
         verClases = new javax.swing.JButton();
         calificaciones = new javax.swing.JButton();
@@ -165,7 +176,7 @@ public class Admin extends javax.swing.JFrame {
                 cajaClasesActionPerformed(evt);
             }
         });
-        watchClass.getContentPane().add(cajaClases, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, -1, -1));
+        watchClass.getContentPane().add(cajaClases, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 30, -1, -1));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/textura-fondo-registro-antiguo_24637-351.jpg"))); // NOI18N
         watchClass.getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 390));
@@ -263,6 +274,49 @@ public class Admin extends javax.swing.JFrame {
         jLabel18.setText("Guardar");
         createQuest.getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 630, 300));
 
+        Calificaciones.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        Calificaciones.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Alumno", "Clase", "Nota"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable1);
+
+        Calificaciones.getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 500, 250));
+
+        Calificaciones.getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 80, 200, -1));
+
+        jLabel19.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setText("Ver Calificaciones");
+        Calificaciones.getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, -1, -1));
+
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/textura-fondo-registro-antiguo_24637-351.jpg"))); // NOI18N
+        Calificaciones.getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 630, 420));
+
+        jFrame1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton1.setText("Crear");
+        jFrame1.getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, -1, -1));
+
+        jButton2.setText("Listar");
+        jFrame1.getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 80, -1, -1));
+
+        jButton3.setText("Modificar");
+        jFrame1.getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, -1, -1));
+
+        jButton4.setText("jButton4");
+        jFrame1.getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 190, -1, -1));
+
+        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/textura-fondo-registro-antiguo_24637-351.jpg"))); // NOI18N
+        jFrame1.getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, -1));
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -273,7 +327,7 @@ public class Admin extends javax.swing.JFrame {
                 crearExamenMouseClicked(evt);
             }
         });
-        getContentPane().add(crearExamen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 274, -1));
+        getContentPane().add(crearExamen, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 274, -1));
 
         crearClase.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         crearClase.setText("Crear Nueva Clase");
@@ -282,11 +336,7 @@ public class Admin extends javax.swing.JFrame {
                 crearClaseMouseClicked(evt);
             }
         });
-        getContentPane().add(crearClase, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, 274, -1));
-
-        jButton3.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        jButton3.setText("Crear Categoria");
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 274, -1));
+        getContentPane().add(crearClase, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 20, 274, -1));
 
         crearPregunta.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         crearPregunta.setText("Crear Nueva Pregunta");
@@ -295,7 +345,7 @@ public class Admin extends javax.swing.JFrame {
                 crearPreguntaMouseClicked(evt);
             }
         });
-        getContentPane().add(crearPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 130, 274, -1));
+        getContentPane().add(crearPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 120, 274, -1));
 
         verClases.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         verClases.setText("Ver Clases");
@@ -304,11 +354,16 @@ public class Admin extends javax.swing.JFrame {
                 verClasesMouseClicked(evt);
             }
         });
-        getContentPane().add(verClases, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 274, -1));
+        getContentPane().add(verClases, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 274, -1));
 
         calificaciones.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         calificaciones.setText("Ir a centro de Calificaciones");
-        getContentPane().add(calificaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 240, 274, -1));
+        calificaciones.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                calificacionesMouseClicked(evt);
+            }
+        });
+        getContentPane().add(calificaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 274, -1));
 
         jButton7.setBackground(new java.awt.Color(255, 255, 255));
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iconfinder-498-student-notes-note-education-4212916_114953.png"))); // NOI18N
@@ -341,23 +396,28 @@ public class Admin extends javax.swing.JFrame {
 
     private void crearPreguntaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearPreguntaMouseClicked
         // TODO add your handling code here:
+
         Admin admin=new Admin();
        createQuest.setLocationRelativeTo(this);
         createQuest.setSize(admin.getSize());
         createQuest.setVisible(true);
+        
     }//GEN-LAST:event_crearPreguntaMouseClicked
 
     private void verClasesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verClasesMouseClicked
         // TODO add your handling code here:
-        
-        VerClase clases=new VerClase();
-        clases.setVisible(true);
+         Admin admin=new Admin();
+       watchClass.setLocationRelativeTo(this);
+        watchClass.setSize(admin.getSize());
+        watchClass.setVisible(true);
+       
+
         
     }//GEN-LAST:event_verClasesMouseClicked
 
     private void botonGuardarClaseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonGuardarClaseMouseClicked
         // TODO add your handling code here:
-        VerClase clas= new VerClase();
+ 
         Clases clase;
         String nombreclase=nombreClase.getText();
 
@@ -375,9 +435,9 @@ public class Admin extends javax.swing.JFrame {
                 + " (nombre,id,id_maestro,id_examen_1,id_examen_2)"
                 + " VALUES ('" + nombreclase  + "', '" + idClases + "', '" + idMaestro + "', '" + idExamen1+ "', '" + idExamen2 + "')");
 
-            DefaultComboBoxModel comb=(DefaultComboBoxModel) clas.getCajaClases().getModel();
+            DefaultComboBoxModel comb=(DefaultComboBoxModel) cajaClases.getModel();
             comb.addElement(clase.getNombreclase());
-            clas.getCajaClases().setModel(comb);
+            cajaClases.setModel(comb);
 
             JOptionPane.showMessageDialog(this, "Agregado Exitosamente");
             db.commit();
@@ -445,6 +505,15 @@ public class Admin extends javax.swing.JFrame {
 
     }//GEN-LAST:event_botonGuardarPreguntaMouseClicked
 
+    private void calificacionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_calificacionesMouseClicked
+        // TODO add your handling code here:
+         Admin admin=new Admin();
+       Calificaciones.setLocationRelativeTo(this);
+        Calificaciones.setSize(admin.getSize());
+        Calificaciones.setVisible(true);
+       
+    }//GEN-LAST:event_calificacionesMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -482,6 +551,7 @@ public class Admin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JFrame Calificaciones;
     private javax.swing.JTextField IDExamen1;
     private javax.swing.JTextField IDExamen2;
     private javax.swing.JButton botonGuardarClase;
@@ -504,8 +574,13 @@ public class Admin extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser fecha;
     private javax.swing.JLabel fondo;
     private javax.swing.JTextField idClase;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton7;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -516,7 +591,10 @@ public class Admin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -525,6 +603,8 @@ public class Admin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField nombreClase;
     private javax.swing.JTable tablaVerClase;
     private javax.swing.JTextField titulo;
